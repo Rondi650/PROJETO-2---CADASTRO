@@ -33,6 +33,9 @@ Sistema simples de cadastro de usuários em Python que salva dados em CSV, TXT e
 ├── dados_json.py    # Funções JSON
 ├── dados_txt.py     # Funções TXT
 └── uploads/         # Arquivos salvos
+    ├── dados.csv
+    ├── dados.json
+    └── dados.txt
 ```
 
 ---
