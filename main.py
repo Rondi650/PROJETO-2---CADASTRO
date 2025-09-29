@@ -60,7 +60,7 @@ def cadastro_usuario():
                 sub_menu()
                 break
         
-        except ValueError or Exception or ValidationError as e:
+        except (ValueError, Exception, ValidationError) as e:
             os.system('cls')
             print(f'Erro, dados incorretos: {e}.\n')
             continuar = input('Deseja cadastrar outro usuario: digite "S" para continuar ou qualquer outra tecla para voltar ao menu principal: ')
@@ -88,7 +88,7 @@ def sub_menu():
             break
         elif entrada == '2':
             os.system('cls')
-            print(f'Dados Salvos em TXT  na pasta: {ARQUIVO_TXT}')
+            print(f'Dados Salvos em TXT na pasta: {ARQUIVO_TXT}')
             salvar_dados_txt(lista)
             ler_dados_txt()
             lista.clear()
