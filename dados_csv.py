@@ -3,9 +3,8 @@ from config import PASTA, ARQUIVO_CSV
 
 os.makedirs(PASTA,exist_ok=True)
 
-arquivo_existe = os.path.exists(ARQUIVO_CSV)
-
 def salvar_dados_csv(dados):
+    arquivo_existe = os.path.exists(ARQUIVO_CSV)
     with open(ARQUIVO_CSV, 'a', newline='') as f:
         escritor = csv.DictWriter(f, fieldnames=['nome','email','idade'])
         if not arquivo_existe:

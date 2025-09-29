@@ -2,7 +2,7 @@ from base_model import Usuario
 from pydantic import ValidationError
 import os, sys
 from dados_csv import salvar_dados_csv, ler_dados_csv
-from config import ARQUIVO_CSV, ARQUIVO_JSON
+from config import ARQUIVO_CSV, ARQUIVO_JSON, ARQUIVO_TXT
 from dados_json import salvar_dados_json, ler_dados_json
 from dados_txt import salvar_dados_txt, ler_dados_txt
 
@@ -88,14 +88,14 @@ def sub_menu():
             break
         elif entrada == '2':
             os.system('cls')
-            print(f'Dados Salvos em CSV na pasta: {ARQUIVO_CSV}')
+            print(f'Dados Salvos em TXT  na pasta: {ARQUIVO_TXT}')
             salvar_dados_txt(lista)
             ler_dados_txt()
             lista.clear()
             break
         elif entrada == '3':
             os.system('cls')
-            print(f'Dados Salvos em CSV na pasta: {ARQUIVO_JSON}')
+            print(f'Dados Salvos em JSON na pasta: {ARQUIVO_JSON}')
             salvar_dados_json(lista)
             ler_dados_json()
             lista.clear()
