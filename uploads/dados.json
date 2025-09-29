@@ -1,0 +1,17 @@
+[
+    {
+        "nome": "rondi",
+        "email": "rondi@rondi.com",
+        "idade": 35
+    },
+    {
+        "nome": "samara",
+        "email": "samara@samara.com",
+        "idade": 28
+    },
+    {
+        "nome": "Heitor",
+        "email": "heitor@heitor.com",
+        "idade": 8
+    }
+]

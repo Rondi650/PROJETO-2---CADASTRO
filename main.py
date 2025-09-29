@@ -2,7 +2,8 @@ from base_model import Usuario
 from pydantic import ValidationError
 import os, sys
 from dados_csv import salvar_dados_csv, leitura_csv
-from config import ARQUIVO_CSV
+from config import ARQUIVO_CSV, ARQUIVO_JSON
+from dados_json import salvar_dados_json, ler_dados_json
 
 os.system('cls')
       
@@ -29,7 +30,8 @@ def menu_principal():
             os.system('cls')
             leitura_csv()
         elif entrada == '4':
-            break
+            os.system('cls')
+            ler_dados_json()
         elif entrada == '5':
             sair_do_programa()
             sys.exit()
@@ -80,10 +82,16 @@ def sub_menu():
             print(f'Dados Salvos em CSV na pasta: {ARQUIVO_CSV}')
             salvar_dados_csv(lista)
             leitura_csv()
+            lista.clear()
             break
         elif entrada == '2':
             break
         elif entrada == '3':
+            os.system('cls')
+            print(f'Dados Salvos em CSV na pasta: {ARQUIVO_JSON}')
+            salvar_dados_json(lista)
+            ler_dados_json()
+            lista.clear()
             break
         elif entrada == '4':
             menu_principal()
