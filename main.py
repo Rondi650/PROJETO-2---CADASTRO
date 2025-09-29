@@ -1,9 +1,10 @@
 from base_model import Usuario
 from pydantic import ValidationError
 import os, sys
-from dados_csv import salvar_dados_csv, leitura_csv
+from dados_csv import salvar_dados_csv, ler_dados_csv
 from config import ARQUIVO_CSV, ARQUIVO_JSON
 from dados_json import salvar_dados_json, ler_dados_json
+from dados_txt import salvar_dados_txt, ler_dados_txt
 
 os.system('cls')
       
@@ -25,10 +26,11 @@ def menu_principal():
             os.system('cls')
             cadastro_usuario()
         elif entrada == '2':
-            break
+            os.system('cls')
+            ler_dados_txt()
         elif entrada == '3':
             os.system('cls')
-            leitura_csv()
+            ler_dados_csv()
         elif entrada == '4':
             os.system('cls')
             ler_dados_json()
@@ -44,8 +46,8 @@ def cadastro_usuario():
     while True:
         
         try:
-            nome = input('Digite o nome do usuario: ')
-            email = input('Digite o email do usuario: ')
+            nome = input('Digite o nome do usuario: ').strip()
+            email = input('Digite o email do usuario: ').strip()
             idade = int(input('Digite a idade: '))
             dados = Usuario(nome=nome, email=email, idade=idade)
             dicionario = {'nome':dados.nome, 'email': dados.email, 'idade':dados.idade}
@@ -81,10 +83,15 @@ def sub_menu():
             os.system('cls')
             print(f'Dados Salvos em CSV na pasta: {ARQUIVO_CSV}')
             salvar_dados_csv(lista)
-            leitura_csv()
+            ler_dados_csv()
             lista.clear()
             break
         elif entrada == '2':
+            os.system('cls')
+            print(f'Dados Salvos em CSV na pasta: {ARQUIVO_CSV}')
+            salvar_dados_txt(lista)
+            ler_dados_txt()
+            lista.clear()
             break
         elif entrada == '3':
             os.system('cls')

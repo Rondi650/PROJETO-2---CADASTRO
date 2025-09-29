@@ -10,8 +10,13 @@
         "idade": 28
     },
     {
-        "nome": "Heitor",
+        "nome": "heitor",
         "email": "heitor@heitor.com",
         "idade": 8
+    },
+    {
+        "nome": "joao",
+        "email": "joao@email.com",
+        "idade": 30
     }
 ]

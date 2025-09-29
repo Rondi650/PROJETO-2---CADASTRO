@@ -1,0 +1,4 @@
+rondi,rondi@rondi.com,35
+samara,samara@samara.com,28
+heitor,heitor@heitor.com,8
+pedro,pedro@pedro.com,30

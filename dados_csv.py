@@ -12,7 +12,7 @@ def salvar_dados_csv(dados):
             escritor.writeheader()
         escritor.writerows(dados)
         
-def leitura_csv():
+def ler_dados_csv():
     with open(ARQUIVO_CSV, 'r', newline='') as f:
         leitor = csv.DictReader(f)
         print(f'{'-'*50} \nDADOS CSV')
